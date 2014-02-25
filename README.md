@@ -30,3 +30,6 @@ The format is as follows, where **A signifies a letter and 9 a digit**:
 source: [Wikipedia](http://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom)
 
 *Postcode exercise has been originally designed by [Antony Marcano](http://antonymarcano.com/blog/)*
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jan-molak/test-driven-tuesday/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
