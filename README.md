@@ -1,6 +1,6 @@
-# Test-Driven Tuesday
+# Test-Driven Friday TDD Katas
 
-## Postcode exercise
+## (British) Postcode
 
 The postcodes are **alphanumeric** and **between six and eight characters long**,
 including a **single space separating the outward and inward** parts of the code.
@@ -29,7 +29,44 @@ The format is as follows, where **A signifies a letter and 9 a digit**:
 
 source: [Wikipedia](http://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom)
 
-*Postcode exercise has been originally designed by [Antony Marcano](http://antonymarcano.com/blog/)*
+_Postcode exercise has been originally designed by [Antony Marcano](http://antonymarcano.com/blog/)_
+
+## The FizzBuzz Kata
+
+_"The 'Fizz-Buzz test' is an interview question designed to help filter out the 99.5% of programming job candidates who can't seem to program their way out of a wet paper bag."_ - Ward Cunningham
+
+- Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+
+Steps:
+
+Lets divide this into different steps so, we can easily write and test this:
+- Print numbers from 1 to 100
+- Print "Fizz" instead of number which is divisible by 3
+- Print "Buzz" instead of number which is divisible by 5
+- Print "FizzBuzz" instead of number which is divisible by both 3 and 5
+
+_FizzBuzz kata has been designed by [Imran Ghory](http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/)_
+
+## String Calculator
+
+- Create a simple String calculator with a method `add("taking,a,string,of,comma,separated,numbers")`
+    - The method can take 0, 1 or 2 numbers, and will return their sum (for an empty string it will
+      return 0) for example `""` or `"1"` or `"1,2"`
+    - Start with the simplest test case of an empty string and move to 1 and two numbers
+    - Remember to solve things as simply as possible so that you force yourself to write tests you did
+      not think about
+    - Remember to refactor after each passing test
+- Allow the `add` method to handle an unknown number of numbers
+- Allow the `add` method to handle new lines between numbers (instead of commas).
+    - the following input is ok:  `"\n2,3"`  (will equal 6)
+    - the following input is NOT ok:  `"1,\n"` (not need to prove it - just clarifying)
+- Support different delimiters
+        to change a delimiter, the beginning of the string will contain a separate line that looks like this:   
+        `"//[delimiter]\n[numbers...]"` for example `"/;\n1;2"` should return three where the default delimiter is `';'` .
+        the first line is optional. All existing scenarios should still be supported
+- Calling `add` with a negative number will throw an exception "negatives not allowed" - and the negative that was passed.
+  if there are multiple negatives, show all of them in the exception message 
+
+
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jan-molak/test-driven-tuesday/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
