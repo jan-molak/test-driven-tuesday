@@ -67,6 +67,7 @@ _FizzBuzz kata has been designed by [Imran Ghory](http://imranontech.com/2007/01
 - Calling `add` with a negative number will throw an exception "negatives not allowed" - and the negative that was passed.
   if there are multiple negatives, show all of them in the exception message 
 
+## Functional programming
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jan-molak/test-driven-tuesday/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+Functional programming katas are inspired by exercises from http://nodeschool.io/#functionaljs
+Those exercises have been modified to make the automated verification of results more prominent and easier to understand.

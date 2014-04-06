@@ -19,7 +19,10 @@
         "grunt-contrib-jshint": "0.8.0",
         "grunt-contrib-watch":  "0.5.3",
         "grunt-mocha-cov":      "0.2.1",
-        "rewire":               "2.0.0"
+        "rewire":               "2.0.0",
+        "sinon":                "1.9.1",
+        "sinon-chai":           "2.5.0",
+        "lorem-ipsum":          "1.0.1"
     },
     "scripts": {
         "blanket": {

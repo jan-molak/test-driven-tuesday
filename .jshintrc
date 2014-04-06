@@ -1,4 +1,5 @@
 {
+    "expr":      true,
     "node":      true,      // Enable globals available when code is running inside of the NodeJS runtime environment.
     "esnext":    true,      // Allow ES.next specific features such as `const` and `let`.
     "bitwise":   false,     // Prohibit bitwise operators (&, |, ^, etc.).
