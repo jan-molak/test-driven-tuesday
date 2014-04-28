@@ -199,65 +199,149 @@ describe('Functional Programming', function() {
                 });
             });
         });
+    });
 
-        describe('"Borrowing" functionality', function() {
+    describe('"Borrowing" functionality', function() {
 
-            describe.skip('call', function() {
-                function duck() {
-                    return { quack: true };
-                }
+        describe.skip('call', function() {
+            function duck() {
+                return { quack: true };
+            }
 
-                function duckWithNoPrototype() {
-                    var duck = Object.create(null);
-                    duck.quack = true;
+            function duckWithNoPrototype() {
+                var duck = Object.create(null);
+                duck.quack = true;
 
-                    return duck;
-                }
+                return duck;
+            }
 
-                function duckImpostor() {
-                    var prototype = duck();
+            function duckImpostor() {
+                var prototype = duck();
 
-                    return Object.create(prototype);
-                }
+                return Object.create(prototype);
+            }
 
-                function notADuck() {
-                    return Object.create(null);
-                }
+            function notADuck() {
+                return Object.create(null);
+            }
 
                 it('returns 0 if there are no ducks to count', function() {
                     expect(duckCount()).to.equal(0);
                 });
 
-                it('counts real ducks', function() {
-                    expect(duckCount(duck())).to.equal(1);
-                });
+            it('counts real ducks', function() {
+                expect(duckCount(duck())).to.equal(1);
+            });
 
-                it('counts real ducks, even if they have no prototype', function() {
-                    expect(duckCount(duckWithNoPrototype())).to.equal(1);
-                });
+            it('counts real ducks, even if they have no prototype', function() {
+                expect(duckCount(duckWithNoPrototype())).to.equal(1);
+            });
 
-                it('ignores a duck impostor', function() {
-                    expect(duckCount(duckImpostor())).to.equal(0);
-                });
+            it('ignores a duck impostor', function() {
+                expect(duckCount(duckImpostor())).to.equal(0);
+            });
 
-                it('ignores objects that are not ducks', function() {
-                    expect(duckCount(notADuck())).to.equal(0);
-                });
+            it('ignores objects that are not ducks', function() {
+                expect(duckCount(notADuck())).to.equal(0);
+            });
 
-                it('counts multiple ducks', function() {
-                    expect(duckCount(duck(), duckWithNoPrototype())).to.equal(2);
-                    expect(duckCount(duck(), duck(), duckWithNoPrototype())).to.equal(3);
-                });
+            it('counts multiple ducks', function() {
+                expect(duckCount(duck(), duckWithNoPrototype())).to.equal(2);
+                expect(duckCount(duck(), duck(), duckWithNoPrototype())).to.equal(3);
+            });
 
-                it('counts ignores anything that is not a "real" duck', function() {
-                    expect(duckCount(
-                        duck(),
-                        duckImpostor(),
-                        notADuck(),
-                        duckImpostor(),
-                        duck()
-                    )).to.equal(2);
-                });
+            it('counts ignores anything that is not a "real" duck', function() {
+                expect(duckCount(
+                    duck(),
+                    duckImpostor(),
+                    notADuck(),
+                    duckImpostor(),
+                    duck()
+                )).to.equal(2);
+            });
+        });
+
+        describe.skip('Partial application without Function::bind', function() {
+            var log = require('../src/functional/log_without_bind'),
+                consoleLog;
+
+            beforeEach(function() {
+                consoleLog = sinon.spy(console, 'log');
+            });
+
+            afterEach(function() {
+                console.log.restore();
+            });
+
+            it('does not use Function#bind', function() {
+                var bind = sinon.spy(console.log, 'bind'),
+
+                    info = log('INFO:');
+
+                info();
+
+                expect(bind).to.not.have.been.called;
+            });
+
+            it('"outputs" an info log, prepending any arguments with a namespace', function() {
+                var info = log('INFO:');
+
+                info('an info message');
+
+                expect(consoleLog).to.have.been.calledWithExactly(
+                    'INFO:', 'an info message'
+                );
+            });
+
+            it('"outputs" a warning log, prepending any arguments with a namespace', function() {
+                var warn = log('WARN:');
+
+                warn('this is a warning message', 'with more info');
+
+                expect(consoleLog).to.have.been.calledWithExactly(
+                    'WARN:', 'this is a warning message', 'with more info'
+                );
+            });
+        });
+
+        describe.skip('Partial application with Function::bind', function() {
+            var log = require('../src/functional/log_with_bind'),
+                consoleLog;
+
+            beforeEach(function() {
+                consoleLog = sinon.spy(console, 'log');
+            });
+
+            afterEach(function() {
+                console.log.restore();
+            });
+
+            it('Uses Function::bind', function() {
+                var bind = sinon.spy(console.log, 'bind'),
+
+                    info = log('INFO:');
+
+                info();
+
+                expect(bind).to.have.been.called;
+            });
+
+            it('"outputs" an info log, prepending any arguments with a namespace', function() {
+                var info = log('INFO:');
+
+                info('an info message');
+
+                expect(consoleLog).to.have.been.calledWithExactly('INFO:', 'an info message');
+            });
+
+            it('"outputs" a warning log, prepending any arguments with a namespace', function() {
+                var warn = log('WARN:');
+
+                warn('this is a warning message', 'with more info');
+
+                expect(consoleLog).to.have.been.calledWithExactly(
+                    'WARN:', 'this is a warning message', 'with more info'
+                );
             });
         });
     });
