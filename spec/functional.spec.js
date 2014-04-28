@@ -12,7 +12,8 @@ var chai       = require('chai'),
     onlyShort   = require('../src/functional/only_short'),
     bouncer     = require('../src/functional/bouncer'),
     stocktaker  = require('../src/functional/stocktaker'),
-    reduce      = require('../src/functional/reduce');
+    reduce      = require('../src/functional/reduce'),
+    duckCount   = require('../src/functional/duck_count');
 
 chai.use(sinonChai);
 
@@ -195,6 +196,67 @@ describe('Functional Programming', function() {
                             previous, current, index, list
                         );
                     });
+                });
+            });
+        });
+
+        describe('"Borrowing" functionality', function() {
+
+            describe.skip('call', function() {
+                function duck() {
+                    return { quack: true };
+                }
+
+                function duckWithNoPrototype() {
+                    var duck = Object.create(null);
+                    duck.quack = true;
+
+                    return duck;
+                }
+
+                function duckImpostor() {
+                    var prototype = duck();
+
+                    return Object.create(prototype);
+                }
+
+                function notADuck() {
+                    return Object.create(null);
+                }
+
+                it('returns 0 if there are no ducks to count', function() {
+                    expect(duckCount()).to.equal(0);
+                });
+
+                it('counts real ducks', function() {
+                    expect(duckCount(duck())).to.equal(1);
+                });
+
+                it('counts real ducks, even if they have no prototype', function() {
+                    expect(duckCount(duckWithNoPrototype())).to.equal(1);
+                });
+
+                it('ignores a duck impostor', function() {
+                    expect(duckCount(duckImpostor())).to.equal(0);
+                });
+
+                it('ignores objects that are not ducks', function() {
+                    expect(duckCount(notADuck())).to.equal(0);
+                });
+
+                it('counts multiple ducks', function() {
+                    expect(duckCount(duck(), duckWithNoPrototype())).to.equal(2);
+                    expect(duckCount(duck(), duck(), duckWithNoPrototype())).to.equal(3);
+                });
+
+                it('counts ignores anything that is not a "real" duck', function() {
+                    expect(duckCount(
+                        duck(),
+                        duckImpostor(),
+                        notADuck(),
+                        duckImpostor(),
+                        duck()
+                    )).to.equal(2);
                 });
             });
         });
