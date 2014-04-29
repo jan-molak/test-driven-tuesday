@@ -168,7 +168,7 @@ describe('Functional Programming', function() {
             });
 
             describe('reduce', function() {
-                function summarise(previous, current, index, array) {
+                function summarise(previous, current, index, array) { // jshint unused:false
                     return previous + current;
                 }
 
@@ -225,9 +225,9 @@ describe('Functional Programming', function() {
                 return Object.create(null);
             }
 
-                it('returns 0 if there are no ducks to count', function() {
-                    expect(duckCount()).to.equal(0);
-                });
+            it('returns 0 if there are no ducks to count', function() {
+                expect(duckCount()).to.equal(0);
+            });
 
             it('counts real ducks', function() {
                 expect(duckCount(duck())).to.equal(1);
