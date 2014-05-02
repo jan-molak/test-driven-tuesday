@@ -7,7 +7,7 @@ The code katas and other exercises you'll find here should help you to understan
 You can use any IDE or text editor you like to play with the code here, but for the purpose of this workshop and its context I'll assume the following:
 * You have [IntelliJ](http://www.jetbrains.com/idea/) or [WebStorm](http://www.jetbrains.com/webstorm/) installed
 * You have a [GitHub account](https://github.com/join) (you'll need it to fork this repository)
-* You have [git](http://git-scm.com/) [installed](https://help.github.com/articles/set-up-git) and [configured](https://help.github.com/articles/generating-ssh-keys) on your machine
+* You have [git](http://git-scm.com/) [installed](https://help.github.com/articles/set-up-git) on your machine
 * You have [node.js and npm set up](http://nodejs.org/)
 * You're using a *nix operating system
 * You've done some programming before and you're comfortable with using terminal
@@ -15,7 +15,7 @@ You can use any IDE or text editor you like to play with the code here, but for 
 ## Workshop Workflow
 
 ### One-time set up
-1. [Fork this project](https://github.com/jan-molak/test-driven-tuesday/fork) (you can learn more about forking from the [github manual](https://github.com/jan-molak/test-driven-tuesday))
+1. [Fork this project](https://github.com/jan-molak/test-driven-tuesday/fork) (you can learn more about forking from the [github manual](https://help.github.com/articles/fork-a-repo))
 1. Clone your fork - there's a [4 min video](http://blog.jetbrains.com/idea/2011/02/advanced-github-integration-rebase-my-github-fork/) that explains cloning using IntelliJ pretty well
 1. Install node modules by running `npm install` in the directory where you've cloned the project to
 1. Make sure you node_modules executables are on your `$PATH` by adding the following entry to your .bashrc or .zshrc
