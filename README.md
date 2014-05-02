@@ -17,9 +17,7 @@ You can use any IDE or text editor you like to play with the code here, but for 
 ### One-time set up
 1. [Fork this project](https://github.com/jan-molak/test-driven-tuesday/fork) (you can learn more about forking from the [github manual](https://github.com/jan-molak/test-driven-tuesday))
 1. Clone your fork - `git clone https://github.com/<MyGitHubAccount>/test-driven-tuesday.git`
-1. Add my original repository so we can sync in the future
-1. * `git config remote.upstream.url https://github.com/jan-molak/test-driven-tuesday.git`
-1. * `git config remote.upstream.fetch '+refs/heads/*:refs/remotes/origin/*'`
+1. Add my original repository so we can sync in the future - `git config remote.upstream.url https://github.com/jan-molak/test-driven-tuesday.git; git config remote.upstream.fetch '+refs/heads/*:refs/remotes/origin/*'`
 1. Install node modules by running `npm install` in the directory where you've cloned the project to
 1. Make sure you node_modules executables are on your `$PATH` by adding the following entry to your .bashrc or .zshrc
 `PATH=$PATH:./node_modules/.bin # Add node_modules binaries`
@@ -42,7 +40,7 @@ Done, without errors.
 
 
 ### Do the exercise
-1. Sync your fork with my original repository - `git stash; git pull upstream master; git stash apply`as explained on [JetBrains](http://blog.jetbrains.com/idea/2011/02/advanced-github-integration-rebase-my-github-fork/)
+1. Sync your fork with my original repository - `git stash; git pull upstream master; git stash apply` as explained on [JetBrains](http://blog.jetbrains.com/idea/2011/02/advanced-github-integration-rebase-my-github-fork/)
 1. Solve a problem of your choosing and make sure all the tests are passing :)
 
 ### Submit your solution
