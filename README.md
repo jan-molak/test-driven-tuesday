@@ -40,7 +40,7 @@ Done, without errors.
 
 
 ### Do the exercise
-1. Sync your fork with my original repository - `git stash; git pull upstream master; git stash apply` as explained on [JetBrains](http://blog.jetbrains.com/idea/2011/02/advanced-github-integration-rebase-my-github-fork/)
+1. Sync your fork with my original repository - `git stash; git pull upstream master; git stash apply`
 1. Solve a problem of your choosing and make sure all the tests are passing :)
 
 ### Submit your solution
