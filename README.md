@@ -15,8 +15,9 @@ You can use any IDE or text editor you like to play with the code here, but for 
 ## Workshop Workflow
 
 ### One-time set up
-1. [Fork this project](https://github.com/jan-molak/test-driven-tuesday/fork) (you can learn more about forking from the [github manual](https://help.github.com/articles/fork-a-repo))
-1. Clone your fork - there's a [4 min video](http://blog.jetbrains.com/idea/2011/02/advanced-github-integration-rebase-my-github-fork/) that explains cloning using IntelliJ pretty well
+1. [Fork this project](https://github.com/jan-molak/test-driven-tuesday/fork) (you can learn more about forking from the [github manual](https://github.com/jan-molak/test-driven-tuesday))
+1. Clone your fork - `git clone https://github.com/<MyGitHubAccount>/test-driven-tuesday.git`
+1. Add my original repository so we can sync in the future - `git config remote.upstream.url https://github.com/jan-molak/test-driven-tuesday.git; git config remote.upstream.fetch '+refs/heads/*:refs/remotes/origin/*'`
 1. Install node modules by running `npm install` in the directory where you've cloned the project to
 1. Make sure you node_modules executables are on your `$PATH` by adding the following entry to your .bashrc or .zshrc
 `PATH=$PATH:./node_modules/.bin # Add node_modules binaries`
@@ -33,13 +34,13 @@ Running "mochacov:watch" (mochacov) task
 
 Done, without errors.
 ```
-6. set up IntelliJ to run [mocha](http://visionmedia.github.io/mocha/) tests:
+7. set up IntelliJ to run [mocha](http://visionmedia.github.io/mocha/) tests:
   1. create a new run configuration called 'unit tests' for 'mocha' as per [the docs](https://www.jetbrains.com/idea/webhelp/creating-and-editing-run-debug-configurations.html)
   2. set your 'mocha node package' to /path/to/your/project/**node_modules/grunt-mocha-cov/node_modules/mocha**
 
 
 ### Do the exercise
-1. Sync your fork with the original test-driven-tuesday repository - as explained on [JetBrains](http://blog.jetbrains.com/idea/2011/02/advanced-github-integration-rebase-my-github-fork/)
+1. Sync your fork with my original repository - `git stash; git pull upstream master; git stash apply` as explained on [JetBrains](http://blog.jetbrains.com/idea/2011/02/advanced-github-integration-rebase-my-github-fork/)
 1. Solve a problem of your choosing and make sure all the tests are passing :)
 
 ### Submit your solution
