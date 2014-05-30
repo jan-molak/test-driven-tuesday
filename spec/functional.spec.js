@@ -33,7 +33,7 @@ chai.use(sinonChai);
 
 describe('Functional Programming', function() {
 
-    describe('uppercase', function() {
+    describe.skip('uppercase', function() {
 
         it('returns an upper-case version of the string provided', function() {
             // pure function, no side effects
@@ -43,7 +43,7 @@ describe('Functional Programming', function() {
 
     describe('Higher-order functions', function() {
 
-        describe('repeat', function() {
+        describe.skip('repeat', function() {
 
             /*
                 Iteration (looping) in functional languages is usually accomplished via recursion.
