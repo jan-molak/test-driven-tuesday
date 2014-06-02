@@ -18,7 +18,7 @@ chai.use(sinon_chai);
  http://www.ccs.neu.edu/research/demeter/related-work/extreme-programming/MockObjectsFinal.PDF
  http://martinfowler.com/articles/mocksArentStubs.html
  */
-describe('Little Mocker', function() {
+describe.skip('Little Mocker', function() {
 
     /*
      Dummy objects are passed around but never actually used.

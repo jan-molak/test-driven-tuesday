@@ -21,8 +21,4 @@ function Authoriser() {
     };
 }
 
-Authoriser.prototype.authorise = function(username, password) {
-    throw new Error('We should not call the real authoriser.');
-};
-
 module.exports = Authoriser;
