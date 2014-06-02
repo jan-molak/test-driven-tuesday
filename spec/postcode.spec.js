@@ -4,7 +4,7 @@ var expect   = require('chai').expect,
 
     Postcode = require('../src/postcode');
 
-describe('Postcode', function() {
+describe.skip('Postcode', function() {
 
     it('is instantiated with a string representing a post code', function() {
         // prepare
@@ -20,7 +20,7 @@ describe('Postcode', function() {
 
     describe('a valid post code', function() {
 
-        xit('...', function() {
+        it('...', function() {
         });
     });
 
