@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-mocha-cov');
 
-    grunt.registerTask('default',  ['jshint', 'test']);
+    grunt.registerTask('default',  ['test']);
     grunt.registerTask('test',     ['mochacov:watch']);
     grunt.registerTask('coverage', ['mochacov:report']);
 
