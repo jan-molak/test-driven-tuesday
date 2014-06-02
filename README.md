@@ -120,3 +120,8 @@ _FizzBuzz kata has been designed by [Imran Ghory](http://imranontech.com/2007/01
 
 Functional programming katas are inspired by exercises from http://nodeschool.io/#functionaljs
 Those exercises have been modified to make the automated verification of results more prominent and easier to understand.
+
+## Little Mocker
+
+The Little Mocker exercise is based on [The Little Mocker blog post](http://blog.8thlight.com/uncle-bob/2014/05/14/TheLittleMocker.html) by
+[Uncle Bob Martin](http://en.wikipedia.org/wiki/Robert_Cecil_Martin)
