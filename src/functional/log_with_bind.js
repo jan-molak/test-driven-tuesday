@@ -44,5 +44,5 @@
 
 'use strict';
 module.exports = function log(namespace) {
-    // return ...
+    return console.log.bind(undefined, namespace);
 };

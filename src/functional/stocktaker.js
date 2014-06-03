@@ -19,5 +19,12 @@
 
 'use strict';
 module.exports = function(inventory) {
-    // return ...
+    return inventory.reduce(function(prev,curr) {
+        if ( typeof( prev[curr] ) !== 'undefined' ) {
+            prev[curr]++;
+        } else {
+            prev[curr] = 1;
+        }
+        return prev;
+    }, {});
 };

@@ -32,5 +32,15 @@
 
 'use strict';
 module.exports = function reduce(list, fn, initial) {
-    // return ...
+    return reduceIndexed( list, fn, initial, 0 );
 };
+
+function reduceIndexed( list, fn, prev, currIndex ) {
+    var result;
+    if ( currIndex == (list.length - 1) ) {
+        result = fn(prev, list[currIndex], currIndex, list);
+    } else {
+        result = reduceIndexed( list, fn, fn(prev, list[currIndex], currIndex, list), currIndex + 1 );
+    }
+    return result;
+}
