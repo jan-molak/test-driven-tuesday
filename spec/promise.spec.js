@@ -36,9 +36,9 @@ describe.only('promises', function () {
                         console.error(err);
                         throw err;
                     }
-                    // .. what if we don't break the execution: forgot to "return" or throw?
+                    // What if we didn't break the execution: forgot to "return" or throw?
 
-                    // like in the block above this one? :)
+                    // Like in the block above this one? Did you notice the problem? :)
 
                     var message = attachDescription(product);
 
