@@ -15,7 +15,7 @@ You can use any IDE or text editor you like to play with the code here, but for 
 ## Workshop Workflow
 
 ### One-time set up
-* [Fork this project](https://github.com/jan-molak/test-driven-tuesday/fork) (you can learn more about forking from the [github manual](https://github.com/jan-molak/test-driven-tuesday))
+* [Fork this project](https://github.com/jan-molak/test-driven-tuesday/fork) (you can learn more about forking from the [github manual](https://help.github.com/articles/fork-a-repo))
 * Clone your fork - `git clone https://github.com/<MyGitHubAccount>/test-driven-tuesday.git`
 * Add my original repository so we can [sync in the future](https://help.github.com/articles/syncing-a-fork):
 ```
