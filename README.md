@@ -12,13 +12,13 @@ You can use any IDE or text editor you like to play with the code here, but for 
 * You're using a *nix operating system
 * You've done some programming before and you're comfortable with using terminal
 
-## Workshop Workflow
+## Workshop Setup
 
 We will now create a fork of our repo so you can easily keep it in sync with this one. You will be able to easily pull from this repo, but push to your fork. 
 
 * **Fork this repo**: [click here](https://github.com/jan-molak/test-driven-tuesday/fork) to create your fork: `https://github.com/<MyGitHubAccount>/test-driven-tuesday` (learn more about forking from [github manual](https://help.github.com/articles/fork-a-repo))
 * **Clone this repo** (not your fork): `git clone https://github.com/jan-molak/test-driven-tuesday`
-* **Configure push to your fork ** (rather than this repo): `git remote set-url --push origin https://github.com/<MyGitHubAccount>/test-driven-tuesday`
+* **Configure push to your fork** (rather than this repo): `git remote set-url --push origin https://github.com/<MyGitHubAccount>/test-driven-tuesday`
 
 Now you can `git pull` from origin and `git push` to your fork without verbose commands like `git pull origin master`. Later when you want to contribute back please raise a Pull Request (PR) on your fork in github site to merge changes.
 
