@@ -14,14 +14,14 @@ You can use any IDE or text editor you like to play with the code here, but for 
 
 ## Workshop Workflow
 
-### One-time set up
-* [Fork this project](https://github.com/jan-molak/test-driven-tuesday/fork) (you can learn more about forking from the [github manual](https://help.github.com/articles/fork-a-repo))
-* Clone your fork - `git clone https://github.com/<MyGitHubAccount>/test-driven-tuesday.git`
-* Add my original repository so we can [sync in the future](https://help.github.com/articles/syncing-a-fork):
-```
-$> git config remote.upstream.url https://github.com/jan-molak/test-driven-tuesday.git
-$> git config remote.upstream.fetch '+refs/heads/*:refs/remotes/origin/*'
-```
+We will now create a fork of our repo so you can easily keep it in sync with this one. You will be able to easily pull from this repo, but push to your fork. 
+
+* **Fork this repo**: [click here](https://github.com/jan-molak/test-driven-tuesday/fork) to create your fork: `https://github.com/<MyGitHubAccount>/test-driven-tuesday` (learn more about forking from [github manual](https://help.github.com/articles/fork-a-repo))
+* **Clone this repo** (not your fork): `git clone https://github.com/jan-molak/test-driven-tuesday`
+* **Configure push to your fork ** (rather than this repo): `git remote set-url --push origin https://github.com/<MyGitHubAccount>/test-driven-tuesday`
+
+Now you can `git pull` from origin and `git push` to your fork without verbose commands like `git pull origin master`. Later when you want to contribute back please raise a Pull Request (PR) on your fork in github site to merge changes.
+
 * Install node modules by running `npm install` in the directory where you've cloned the project to. **Remember to re-run npm install whenever the `package.json` file is changed**
 * Make sure you node_modules executables are on your `$PATH` by adding the following entry to your `.bashrc` or `.zshrc`
 ```
