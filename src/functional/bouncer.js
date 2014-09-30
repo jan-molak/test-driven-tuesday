@@ -26,6 +26,10 @@
 'use strict';
 module.exports = function bouncer(guestList) {
     return function(guests) {
-        // return ...
+        return guests.every(function(guest) {
+            return guestList.some(function(guestListGuest) {
+                    return guestListGuest.id == guest.id;
+            });
+        });
     };
 };

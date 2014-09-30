@@ -43,5 +43,14 @@
 'use strict';
 
 module.exports = function duckCount() {
-    // return ...;
+    return Array.prototype.slice.call(arguments, 0).reduce( function(prev, curr, index, array) { // jshint unused:false
+            var result = prev;
+            if ( 'quack' in curr ) {
+                if ( typeof curr.hasOwnProperty == 'undefined' || curr.hasOwnProperty('quack') ) {
+                    result++;
+                }
+            }
+            return result;
+        }, 0
+    );
 };

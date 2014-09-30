@@ -35,5 +35,7 @@
 
 'use strict';
 module.exports = function onlyShort(messages) {
-    // return ...
+    return messages.filter( function(element) {
+        return element.message.length < 50;
+    }).map( function(element) {return element.message} );
 };

@@ -54,5 +54,9 @@
 var slice = Array.prototype.slice;
 
 module.exports = function log(namespace) {
-    // return ...
+    return function() {
+        var args = slice.call(arguments,0);
+        args.unshift(namespace);
+        console.log.apply(null,args)
+    }
 };
