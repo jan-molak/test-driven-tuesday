@@ -89,6 +89,8 @@ describe('Functional Programming', function() {
                 // generates an object { message: body } where body has no more characters than maxCharacters
                 function message(maxCharacters) { return { message: loremIpsum({ units: 'words', count: Math.floor(maxCharacters / 2) }).substr(0, maxCharacters) }; }
 
+                //AW to discover more about bind() as well as call() and apply(), 'this' article may prove helpful http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/ (pun intended!) 
+
                 var shortMessage = message.bind(message, 49),
                     longMessage  = message.bind(message, 200);
 
