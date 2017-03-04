@@ -40,7 +40,7 @@ Running "mochacov:watch" (mochacov) task
 
 Done, without errors.
 ```
-* set up IntelliJ to run [mocha](http://visionmedia.github.io/mocha/) tests:
+* set up IntelliJ to run [mocha](http://mochajs.org/) tests:
   1. create a new run configuration called 'unit tests' for 'mocha' as per [the docs](https://www.jetbrains.com/idea/webhelp/creating-and-editing-run-debug-configurations.html)
   2. set your 'mocha node package' to /path/to/your/project/**node_modules/grunt-mocha-cov/node_modules/mocha**
 
